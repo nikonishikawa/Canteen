@@ -13,7 +13,9 @@ public partial class TblCustomer
 
     public long CusAddress { get; set; }
 
-    public long? Membership { get; set; }
+    public long Membership { get; set; }
+
+    public long Status { get; set; }
 
     public virtual TblAddressGeneral CusAddressNavigation { get; set; } = null!;
 
@@ -21,9 +23,13 @@ public partial class TblCustomer
 
     public virtual TblName CusNameNavigation { get; set; } = null!;
 
-    public virtual TblMembership? MembershipNavigation { get; set; }
+    public virtual TblMembership MembershipNavigation { get; set; } = null!;
+
+    public virtual TblArchive StatusNavigation { get; set; } = null!;
 
     public virtual ICollection<TblOrderStatus> TblOrderStatuses { get; set; } = new List<TblOrderStatus>();
+
+    public virtual ICollection<TblTicket> TblTickets { get; set; } = new List<TblTicket>();
 
     public virtual ICollection<TblTray> TblTrays { get; set; } = new List<TblTray>();
 }

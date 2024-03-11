@@ -9,7 +9,7 @@ public partial class TblParcelInfo
 
     public long OrderId { get; set; }
 
-    public byte[] ShipStamp { get; set; } = null!;
+    public DateTime ShipStamp { get; set; }
 
     public string Location { get; set; } = null!;
 

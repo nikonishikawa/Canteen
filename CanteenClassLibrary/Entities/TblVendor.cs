@@ -15,7 +15,13 @@ public partial class TblVendor
 
     public long Position { get; set; }
 
+    public long Status { get; set; }
+
     public virtual TblPosition PositionNavigation { get; set; } = null!;
+
+    public virtual TblArchive StatusNavigation { get; set; } = null!;
+
+    public virtual ICollection<TblArchive> TblArchives { get; set; } = new List<TblArchive>();
 
     public virtual TblAddressGeneral VendAddressNavigation { get; set; } = null!;
 

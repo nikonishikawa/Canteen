@@ -13,7 +13,7 @@ public partial class TblTrayItem
 
     public decimal Quantity { get; set; }
 
-    public byte[] AddStamp { get; set; } = null!;
+    public DateTime AddStamp { get; set; }
 
     public virtual TblItem ItemNavigation { get; set; } = null!;
 
