@@ -18,7 +18,6 @@ namespace CanteenClassLibrary.Services
         {
             _dbContext = dbContext;
         }
-
         public async Task<ApiResponseMessage<string>> InsertData(TrayCombinedDto combinedDto)
         {
             using (var transaction = _dbContext.Database.BeginTransaction())
