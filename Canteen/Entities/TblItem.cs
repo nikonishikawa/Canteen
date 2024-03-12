@@ -22,6 +22,4 @@ public partial class TblItem
     public virtual TblCategory CategoryNavigation { get; set; } = null!;
 
     public virtual ICollection<TblOrderItem> TblOrderItems { get; set; } = new List<TblOrderItem>();
-
-    public virtual ICollection<TblTrayItem> TblTrayItems { get; set; } = new List<TblTrayItem>();
 }

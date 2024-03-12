@@ -15,7 +15,5 @@ public partial class TblTrayItem
 
     public DateTime AddStamp { get; set; }
 
-    public virtual TblItem ItemNavigation { get; set; } = null!;
-
     public virtual TblTray Tray { get; set; } = null!;
 }

@@ -458,11 +458,6 @@ public partial class CanteenContext : DbContext
             entity.Property(e => e.Quantity).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.TrayId).HasColumnName("TrayID");
 
-            entity.HasOne(d => d.ItemNavigation).WithMany(p => p.TblTrayItems)
-                .HasForeignKey(d => d.Item)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_TblTrayItems_TblViand");
-
             entity.HasOne(d => d.Tray).WithMany(p => p.TblTrayItems)
                 .HasForeignKey(d => d.TrayId)
                 .OnDelete(DeleteBehavior.ClientSetNull)

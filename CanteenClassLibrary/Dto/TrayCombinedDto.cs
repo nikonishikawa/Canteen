@@ -8,6 +8,7 @@ namespace CanteenClassLibrary.Dto
 {
     public class TrayCombinedDto
     {
+
         public long CusId { get; set; }
         public long Status { get; set; }
 

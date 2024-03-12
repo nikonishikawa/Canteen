@@ -18,6 +18,8 @@ namespace Canteen.Controllers
             _customerService = customerService;
         }
 
+
+
         //[HttpPost("InsertTrayTempToTrayV2")]
         //public async Task<ApiResponseMessage<string>> InsertTrayTempToTray(TrayTempDto dto)
 
@@ -40,7 +42,82 @@ namespace Canteen.Controllers
         //    }
         //}
 
+        //[HttpPost("InsertTempToTrayAutomatically")]
+        //public async Task<ApiResponseMessage<string>> InsertTempToTrayAutomatically()
+        //{
+        //    try
+        //    {
+        //        var res = await _customerService.InsertTempToTrayAutomatically();
+        //        return res;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error in InsertName: {ex.Message}");
+        //        Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+        //        Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+        //        var res = new ApiResponseMessage<string>
+        //        {
+        //            Data = "",
+        //            IsSuccess = false,
+        //            Message = ex.Message
+        //        };
+
+        //        return res;
+        //    }
+        //}
+
+        //[HttpPost("InsertTempToTrayItemAutomatically")]
+        //public async Task<ApiResponseMessage<string>> InsertTempToTrayItemAutomatically()
+        //{
+        //    try
+        //    {
+        //        var res = await _customerService.InsertTempToTrayItemAutomatically();
+        //        return res;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error in InsertName: {ex.Message}");
+        //        Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+        //        Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+        //        var res = new ApiResponseMessage<string>
+        //        {
+        //            Data = "",
+        //            IsSuccess = false,
+        //            Message = ex.Message
+        //        };
+
+        //        return res;
+        //    }
+        //}
+
         [HttpPost("InsertTrayItemTemp")]
+        public async Task<ApiResponseMessage<string>> InsertTrayItemTemp(TrayItemsTempDto dto)
+        {
+            try
+            {
+                var res = await _customerService.InsertTrayItemTemp(dto);
+                return res;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in InsertName: {ex.Message}");
+                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+                var res = new ApiResponseMessage<string>
+                {
+                    Data = "",
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+
+                return res;
+            }
+        }
+
+        [HttpPost("TramsferTempToTray")]
         public async Task<ApiResponseMessage<string>> InsertTempToNotTemp(TrayCombinedDto combinedDto)
         {
             try
@@ -65,30 +142,30 @@ namespace Canteen.Controllers
             }
         }
 
-        [HttpPost("HEEEHEEE")]
-        public async Task<ApiResponseMessage<string>> InsertData(TrayCombinedDto combinedDto)
-        {
-            try
-            {
-                var res = await _customerService.InsertData(combinedDto);
-                return res;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in InsertName: {ex.Message}");
-                Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
-                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+        //[HttpPost("HEEEHEEE")]
+        //public async Task<ApiResponseMessage<string>> InsertData(TrayCombinedDto combinedDto)
+        //{
+        //    try
+        //    {
+        //        var res = await _customerService.InsertData(combinedDto);
+        //        return res;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error in InsertName: {ex.Message}");
+        //        Console.WriteLine($"Inner Exception: {ex.InnerException?.Message}");
+        //        Console.WriteLine($"Stack Trace: {ex.StackTrace}");
 
-                var res = new ApiResponseMessage<string>
-                {
-                    Data = "",
-                    IsSuccess = false,
-                    Message = $"An error occurred: {ex.Message}",
-                };
+        //        var res = new ApiResponseMessage<string>
+        //        {
+        //            Data = "",
+        //            IsSuccess = false,
+        //            Message = $"An error occurred: {ex.Message}",
+        //        };
 
-                return res;
-            }
-        }
+        //        return res;
+        //    }
+        //}
 
         //[HttpPost("HanTrayItemTemp")]
         //public async Task<ApiResponseMessage<string>> InsertData(TrayCombinedDto combinedDto)
