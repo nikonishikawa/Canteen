@@ -1,7 +1,9 @@
-﻿using CanteenClassLibrary.APIResponse;
+﻿using Canteen.Auth;
+using CanteenClassLibrary.APIResponse;
 using CanteenClassLibrary.Dto;
 using CanteenClassLibrary.Entities;
 using CanteenClassLibrary.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,6 +44,7 @@ namespace Canteen.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpGet("GetCustomer")]
         public async Task<ActionResult<ApiResponseMessage<IList<TblCustomer>>>> GetCustomer(long cusId)
         {
